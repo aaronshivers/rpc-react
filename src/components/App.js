@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Results from './Results'
 
 const App = () => {
 
@@ -42,30 +43,22 @@ const App = () => {
 
   return (
     <div className="content-container">
-      <div className="App">
-        {
-          options.map((option, i) => (
-            <button
-              className="button"
-              key={ i }
-              onClick={ handleOnClick }
-            >
-              { option }
-            </button>
-          ))
-        }
-        <div className="text-body">
-          {
-            userChoice && <p className="text-body">You chose { userChoice }.</p>
-          }
-          {
-            cpuChoice && <p className="text-body">CPU chose { cpuChoice }.</p>
-          }
-          {
-            getWinner(userChoice, cpuChoice) && <p className="text-body">{ getWinner(userChoice, cpuChoice) }</p>
-          }
-        </div>
-      </div>
+      {
+        options.map((option, i) => (
+          <button
+            className="button"
+            key={ i }
+            onClick={ handleOnClick }
+          >
+            { option }
+          </button>
+        ))
+      }
+      <Results
+        userChoice={ userChoice }
+        cpuChoice={ cpuChoice }
+        getWinner={ getWinner }
+      />
     </div>
   )
 }
