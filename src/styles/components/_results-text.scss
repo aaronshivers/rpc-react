@@ -1,6 +1,12 @@
 .results-text {
   border-bottom: 1px solid lighten($light-blue, 10%);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  padding: $xs-size;
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .results-text {
   padding: $l-size $m-size;
+  }
 }
