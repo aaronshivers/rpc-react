@@ -10,6 +10,7 @@
   padding: $l-size;
   width: 100%;
   outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 @media (min-width: $desktop-breakpoint) {
